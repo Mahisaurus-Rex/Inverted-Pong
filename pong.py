@@ -26,12 +26,13 @@ while not done:
         if event.type == pygame.QUIT:
             done = True
     pressed=pygame.key.get_pressed()
-    #Set controls p1
-    if pressed[pygame.K_w] and p1_y>0: p1_y-=2
-    if pressed[pygame.K_s] and p1_y<screen.get_height()-200: p1_y+=2
-    #Set controls p2
-    if pressed[pygame.K_UP] and p2_y>0: p2_y-=2
-    if pressed[pygame.K_DOWN] and p2_y<screen.get_height()-200: p2_y+=2
+    #move paddles
+    if (ball_y<p1_y) and p1_y>0: 
+        p1_y-=2 
+        p2_y-=2
+    if (ball_y>p1_y) and p1_y<screen.get_height()-200: 
+        p1_y+=2
+        p2_y+=2
     #make ball movement
     ball_x+=slope_x
     ball_y+=slope_y
@@ -58,7 +59,7 @@ while not done:
         ball_y+=slope_y
     #make players and ball
     screen.fill((0,0,0))
-    score = myfont.render(str(p1_score)+" "+str(p2_score), True, (255,255,255))
+    score = myfont.render(str(p1_score+p2_score), True, (255,255,255))
     screen.blit(score, ((screen.get_width()/2)-20,0))
     p1=pygame.draw.rect(screen, (255,255,255), pygame.Rect(p1_x,p1_y,paddle_width,paddle_height))
     p2=pygame.draw.rect(screen, (255,255,255), pygame.Rect(p2_x,p2_y,paddle_width,paddle_height))
