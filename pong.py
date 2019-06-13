@@ -27,17 +27,17 @@ while not done:
             done = True
     pressed=pygame.key.get_pressed()
     #move paddles
-    if (ball_y<p1_y) and p1_y>0: 
+    if pressed[pygame.K_w] and p1_y>0: 
         p1_y-=1.85
         p2_y-=1.85
-    if (ball_y>p1_y) and p1_y<screen.get_height()-200: 
+    if pressed[pygame.K_s] and p1_y<screen.get_height()-200: 
         p1_y+=1.85
         p2_y+=1.85
     #make ball movement
     #ball control
     ball_x+=slope_x
-    if pressed[pygame.K_w] and ball_y>0: ball_y-=2
-    if pressed[pygame.K_s] and ball_y<screen.get_height()-200: ball_y+=2
+    if pressed[pygame.K_UP] and ball_y>0: ball_y-=2
+    if pressed[pygame.K_DOWN] and ball_y<screen.get_height()-200: ball_y+=2
     if ball_y <= 0 or ball_y >= (screen.get_height()):
         slope_y*=-1
     if ball_x <= 0:
