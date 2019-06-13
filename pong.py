@@ -65,6 +65,6 @@ while not done:
     screen.blit(score, ((screen.get_width()/2)-20,0))
     p1=pygame.draw.rect(screen, (255,255,255), pygame.Rect(p1_x,p1_y,paddle_width,paddle_height))
     p2=pygame.draw.rect(screen, (255,255,255), pygame.Rect(p2_x,p2_y,paddle_width,paddle_height))
-    ball=pygame.draw.rect(screen, (255,255,255), pygame.Rect(ball_x,ball_y,paddle_width,paddle_width))
+    ball=pygame.draw.rect(screen, (255, 236, 160), pygame.Rect(ball_x,ball_y,paddle_width,paddle_width))
 
     pygame.display.flip()
