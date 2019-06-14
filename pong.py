@@ -63,7 +63,7 @@ while not done:
         ball_y+=slope_y
     #make players and ball
     screen.fill((0,0,0))
-    score = myfont.render(str(str(p1_score+p2_score)+" "+str(int(paddle_score/3))), True, (255,255,255))
+    score = myfont.render(str(str(int(paddle_score/3))+" "+str(p1_score+p2_score)), True, (255,255,255))
     screen.blit(score, ((screen.get_width()/2)-20,0))
     p1=pygame.draw.rect(screen, (255,255,255), pygame.Rect(p1_x,p1_y,paddle_width,paddle_height))
     p2=pygame.draw.rect(screen, (255,255,255), pygame.Rect(p2_x,p2_y,paddle_width,paddle_height))
