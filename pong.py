@@ -20,6 +20,7 @@ p1_score,p2_score,paddle_score=0,0,0
 p1=pygame.draw.rect(screen, (255,255,255), pygame.Rect(p1_x,p1_y,paddle_width,paddle_height))
 p2=pygame.draw.rect(screen, (255,255,255), pygame.Rect(p2_x,p2_y,paddle_width,paddle_height))
 ball=pygame.draw.rect(screen, (255,255,255), pygame.Rect(ball_x,ball_y,paddle_width,paddle_width))
+#def checkScores():
 #start program
 while not done:
     for event in pygame.event.get():
@@ -28,11 +29,11 @@ while not done:
     pressed=pygame.key.get_pressed()
     #move paddles
     if pressed[pygame.K_w] and p1_y>0: 
-        p1_y-=2
-        p2_y-=2
+        p1_y-=3
+        p2_y-=3
     if pressed[pygame.K_s] and p1_y<screen.get_height()-200: 
-        p1_y+=2
-        p2_y+=2
+        p1_y+=3
+        p2_y+=3
     #make ball movement
     #ball control
     ball_x+=slope_x
