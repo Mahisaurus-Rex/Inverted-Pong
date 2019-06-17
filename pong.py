@@ -11,7 +11,7 @@ done = False
 p1_x,p1_y=30,30
 p2_x,p2_y=(screen.get_width()-60),30
 ball_x,ball_y=((screen.get_width())/2),((screen.get_height())/2)
-slope_x,slope_y=1.5,1.5
+slope_x,slope_y=2,1.5
 #set constants
 paddle_width=screen.get_width()/64
 paddle_height=screen.get_height()/3.6
